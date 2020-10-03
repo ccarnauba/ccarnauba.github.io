@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caio Carnauba Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c3ab20513a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;900&family=Source+Sans+Pro:wght@300;400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- insert my logo image here-->
+            <img src="" alt="">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <nav class="nav__list">
+                <li><a class = "nav__link" href="#home">Home</a></li>
+                <li><a class = "nav__link" href="#about">About Me</a></li>
+                <li><a class = "nav__link" href="#work">My Work</a></li>
+                <li><a class = "nav__link" href="#contact">Contact Me</a></li>
+            </nav>
+        </nav>
+    </header>
+
+    <!-- introduction-->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+            Hi, I am <strong>Caio Carnauba</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Software Engineer</p>
+        <!--Image of me-->
+        <img src="headshot.jpg" alt="My Face!" class="intro__img">
+    </section>
+
+    <!--About Me-->
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">About me</h2>
+        <p class="section__subtitle section__subtitle--about">Computer Science and Mathematics Undergrad</p>
+        <div class="about-me__body">
+            <p>Hi! My name is Caio Carnauba and I am a Junior Computer Science 
+                and Mathematics major at Grinnell College. I am currently seeking software development
+                and finance internship opportunities for Summer 2021, please feel free to reach out with offers. 
+            </p>
+            <p>Outside of the classroom, I am one of the assistant portfolio directors of Pioneer Capital Investment, our
+                student investment group. I also enjoy playing the classical guitar and I am trying to pick
+                up the lute with our medieval ensemble. 
+            </p>
+        </div>
+    </section>
+
+    <!--My Work-->
+    <section class="my-work" id="work">
+        <h2 class="section__title">My work</h2>
+        <p class="section__subtitle"></p>
+            <p>I'm still working on some projects outside class to upload here.
+            </p>
+            <p>If you have any ideas, feel free to contact me!</p> 
+        <div class="portfolio">
+            <!--port item 1-->
+            <a href="#" class="portfolio__item">
+                <img src="" alt="" class="portfolio__img">
+            </a>
+            <!--port item 2-->
+            <a href="#" class="portfolio__item">
+                <img src="" alt="" class="portfolio__img">
+            </a>
+            <!--port item 3-->
+            <a href="#" class="portfolio__item">
+                <img src="" alt="" class="portfolio__img">
+            </a>
+        </div>
+    </section>
+
+    <section  class="contact-me" id="contact">
+        <h2 class="section__title">Contact me</h2>
+        <p class="section__subtitle"> Write your message below!</p>
+        <div class="contact__form">
+            <form action="contact-form-handler.php" method="post">
+                <input name = "name" type="text" class="contact__item" placeholder="Your name" required></input>
+                <br>
+                <input name = "email" type="email" class="contact__item" placeholder="Your email" required></input>
+                <br>
+                <input name = "subject" type="text" class="contact__item" placeholder="Email subject" required></input>
+                <br>
+                <textarea name = "text" type="text" class="contact__item contact_text" placeholder="Message" rows="6" cols="50" required></textarea>
+                <br>
+                <button name="submit" type="submit" class="contact__send">Send</button>
+            </form>
+    </div>
+    </section>   
+    
+    <footer class="footer">
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class = "social-list__link" href="https://www.linkedin.com/in/caio-carnauba-108157155/">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class = "social-list__link" href="">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
