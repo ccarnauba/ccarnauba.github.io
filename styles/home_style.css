@@ -4,7 +4,6 @@ html {
     font-weight: <weight>;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-
     background-color: grey;
 }
 
@@ -35,20 +34,22 @@ body {
 }
 
 .main_banner {
-    padding: 0 20px 20px 20px;
     margin: 0 auto;
-    padding: 0 20px 20px 20px;
+    padding: 20px 20px 10px 20px;
     align-items: center;
     list-style-type: none;
+    border-bottom: solid rgba(0, 0, 0, 0.5);
 }
 
-.main_banner {
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
+.main_banner .nav_bar {
+    padding: 10px 0px 0px 0px;
 }
 
-.main_banner .overband a {
+.main_banner .nav_bar a {
     text-decoration: none;
     color:black;
+}
+
+.text_body {
+    padding: 20px 0 0 0;
 }
