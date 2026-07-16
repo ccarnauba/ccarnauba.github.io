@@ -5,14 +5,50 @@ html {
     font-style: normal;
     font-variation-settings: "wdth" 100;
 
-    background-color: #00539f;
+    background-color: grey;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    width: 600px;
-    margin: 0 auto;
-    background-color: #ff9500;
+    width: 75%;
+    margin: 0px auto auto auto;
+    background-color: white;
     padding: 0 20px 20px 20px;
-    border: 5px solid black;
+    border: 5px black;
+    border-style: none solid solid solid;
 }
+
+.header-pair {
+    padding: 0 0;
+    margin: 0 0;
+    display: inline-block;
+}
+
+.header-pair .slash {
+    padding: 0 0;
+    margin: 0 0;
+    opacity: 40%
+}
+
+.main_banner {
+    padding: 0 20px 20px 20px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    align-items: center;
+    list-style-type: none;
+}
+
+.main_banner {
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+}
+
+.main_banner .overband a {
+    text-decoration: none;
+    color:black;
 }
