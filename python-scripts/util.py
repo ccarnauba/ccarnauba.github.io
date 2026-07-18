@@ -43,6 +43,8 @@ def convert_markdown_directory_to_blog_pages (markdown_directory, html_directory
             html_content = html_template.standard_blog_post(content_html)
 
             html_filename = filename.removesuffix(".md") + ".html"
+
+            # Note that this relies on the directory structure being there.
             html_path = os.path.join(html_directory, html_filename)
             blog_page = Blog_page(title, date,
                                   markdown_path,
@@ -63,8 +65,10 @@ def create_blog_html(blog_pages, blog_file_path):
     # the scripts. As such, we have to remove the .. from the path.
     blog_pages.sort(key= lambda blog: blog.date)
     for blog in blog_pages:
+        blog_link = blog.html_path.removeprefix("../")
+        print(blog_link)
         anchor_tag =\
-            f"""<a href= \"{blog.html_path}\"
+            f"""<a href= \"{blog_link}\"
             class=\"blog_post\">{blog.date}: {blog.title}</a>
             """
         list_element = f"<li> {anchor_tag} </li>"
