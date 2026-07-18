@@ -1,4 +1,5 @@
 # About this website
+Written on: 2026-06-18
 ## How did you write this?
 As you might be able to tell by the bare-bones look, this website is mostly pure, handwritten html and css. I deeply believe in "you don't understand what you don't write", I didn't want to use AI to build my website, and I didn't know a whole ton of any modern web framework.
 
