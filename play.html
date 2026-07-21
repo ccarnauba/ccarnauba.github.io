@@ -1,5 +1,3 @@
-def standard_head(css_location):
-    head_html = f"""
 <!doctype html>
 <html lang="en-US">
 
@@ -11,21 +9,16 @@ def standard_head(css_location):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href= "{css_location}"/>
+<link rel="stylesheet" href= "styles/home_style.css"/>
 </head>
-"""
-    return head_html
-
-def standard_header(path_to_toplevel):
-    html_header =\
-    f"""
+<body>
     <header>
         <nav class="main_banner">
             <h1 class="my_name"> Caio Dezotti Carnauba </h1>
 
             <h2 class="nav_bar">
                 <div class="header-pair">
-                    <a href= "{path_to_toplevel}index.html" title="Home">
+                    <a href= "index.html" title="Home">
                         <span class="slash"> / </span>
                         <span class="nav-name"> Home </span>
                     </a>
@@ -33,21 +26,21 @@ def standard_header(path_to_toplevel):
 
 
                 <div class="header-pair">
-                    <a href="{path_to_toplevel}blog.html" title="Blog">
+                    <a href="blog.html" title="Blog">
                         <span class="slash"> / </span>
                         <span class="nav-name"> Blog </span>
                     </a>
                 </div>
 
                 <div class="header-pair">
-                    <a href="{path_to_toplevel}worklog.html" title="Worklog">
+                    <a href="worklog.html" title="Worklog">
                         <span class="slash"> / </span>
                         <span class="nav-name"> Worklog </span>
                     </a>
                 </div>
 
                 <div class="header-pair">
-                    <a href="{path_to_toplevel}play.html" title="Play">
+                    <a href="play.html" title="Play">
                         <span class="slash"> / </span>
                         <span class="nav-name"> Play</span>
                     </a>
@@ -55,27 +48,11 @@ def standard_header(path_to_toplevel):
             </h2>
         </nav>
     </header>
-"""
-    return html_header
-
-standard_footer ="""
-"""
-
-def standard_stylesheet(path_to_toplevel):  return path_to_toplevel + "styles/home_style.css"
-
-def standard_webpage (content_html, path_to_toplevel):
-    """
-    Given an html string for the written content of our webpage, outputs
-    html with the shared headers and footers.
-    """
-    webpage = standard_head(standard_stylesheet(path_to_toplevel)) + "<body>" + standard_header(path_to_toplevel)\
-    + "<div class=\"text_body\">" + content_html\
-    + "</div class=\"text_body\">" + standard_footer\
-    + "</body>" + "</html>"
-    return webpage
-
-def standard_top_level_post (content_html):
-    return standard_webpage(content_html, "")
-
-def standard_blog_post (content_html):
-    return standard_webpage(content_html, "../")
+    <p>
+        All work no play makes Jack a dull boy. This section of my website is dedicated to showing a couple of small toy things I think are interesting enough to show.
+    </p>
+    <ul>
+        <li><a href="play/random_walk/play.html"> random walk</a></li>
+    </ul>
+</body>
+</html>
