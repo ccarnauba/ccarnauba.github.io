@@ -16,10 +16,10 @@ pause_button.addEventListener("click", () => {
     paused = !paused;
 
     if (paused) {
-        pause_button.textContent = "unpause";
+        pause_button.textContent = "Unpause";
     }
     else {
-        pause_button.textContent = "pause";
+        pause_button.textContent = "Pause";
     }
 
 });
