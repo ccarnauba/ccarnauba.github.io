@@ -89,3 +89,7 @@ def regerate_all_blogs_and_create_blog(markdown_directory, html_directory, blog_
     blog_pages = convert_markdown_directory_to_blog_pages(markdown_directory, html_directory)
     write_blog_pages(blog_pages)
     create_blog_html(blog_pages, blog_file_path)
+
+def worklog_to_html(worklog_org_file, worklog_file):
+    # TODO write this.
+    raise "STUB"
