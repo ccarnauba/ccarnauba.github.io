@@ -39,7 +39,10 @@ def convert_markdown_directory_to_blog_pages (markdown_directory, html_directory
             title = contents[0].removeprefix("#")
             date_str = contents[1].lower().removeprefix("written on:").strip()
             date = datetime.date.fromisoformat(date_str)
-            content_html = markdown2.markdown("".join(contents[2:]))
+
+            # TODO: Let's just use the metadata extra instead of adding our one
+            # two lines at the top.
+            content_html = markdown2.markdown("".join(contents[2:]), extras=["fenced-code-blocks", "footnotes"])
             html_content = html_template.standard_blog_post(content_html)
 
             html_filename = filename.removesuffix(".md") + ".html"
@@ -63,7 +66,7 @@ def create_blog_html(blog_pages, blog_file_path):
     blog_links = []
     # Note that the blog html lives in a different directory relative to
     # the scripts. As such, we have to remove the .. from the path.
-    blog_pages.sort(key= lambda blog: blog.date)
+    blog_pages.sort(key= lambda blog: blog.date, reverse = True)
     for blog in blog_pages:
         blog_link = blog.html_path.removeprefix("../")
         print(blog_link)

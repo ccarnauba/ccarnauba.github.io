@@ -65,7 +65,7 @@ We'll then have the syntax tree:
 ```
 Or graphically:
 
-![^1 ../static/on_writing_interpreters/ example.svg][^1 Abstract syntax tree]
+![Abstract syntax tree](../static/on_writing_interpreters/ast_example.svg "Abstract syntax tree")
 
 [^1]: If you haven't given it a read, I recommend it! It's a great book. I'll explain some lisp here, but if you want to learn more I recommend giving this book a read.
 
