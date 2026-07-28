@@ -36,16 +36,17 @@ def convert_markdown_directory_to_blog_pages (markdown_directory, html_directory
         with open(markdown_path) as markdown_file:
 
             contents = markdown_file.readlines()
-            title = contents[0].removeprefix("#")
-            date_str = contents[1].lower().removeprefix("written on:").strip()
-            date = datetime.date.fromisoformat(date_str)
 
             # TODO: Let's just use the metadata extra instead of adding our one
             # two lines at the top.
-            content_html = markdown2.markdown("".join(contents[2:]), extras=["fenced-code-blocks", "footnotes"])
+            content_html = markdown2.markdown("".join(contents), extras=["fenced-code-blocks", "footnotes", "metadata"])
             html_content = html_template.standard_blog_post(content_html)
 
             html_filename = filename.removesuffix(".md") + ".html"
+
+            title = content_html.metadata["title"]
+            date_str = content_html.metadata["date"]
+            date = datetime.date.fromisoformat(date_str)
 
             # Note that this relies on the directory structure being there.
             html_path = os.path.join(html_directory, html_filename)

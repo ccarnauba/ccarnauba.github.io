@@ -1,6 +1,8 @@
-# On writing an interpreter
-Written on: 2026-07-27
+title: On writing an interpreter
+date: 2026-07-27
 
+
+# On writing an interpreter
 ## What is an interpreter? 
 Programming languages can be split into many different axes, and you've probably
 heard of a couple of them. The difference that matters here is compiled vs
