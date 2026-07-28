@@ -13,7 +13,8 @@
         <style>
          canvas {
              border: 1px solid black;
-             overflow-x: auto;
+             margin: auto;
+             display: block;
          }
         </style>
     </head>
@@ -59,7 +60,9 @@
                 I never really learned much web development, so I wanted to write something simple. Here's a random walk! MDN has really good tutorials and documentation.
             </p>
 
-            <canvas id="canvas" width="500" height="300"> </canvas>
+            <div id="canvas_div">
+                <canvas id="canvas" width="500" height="300"> </canvas>
+            </div>
             <br>
 
             <button id="pause">Pause</button>

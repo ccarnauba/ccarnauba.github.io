@@ -1,6 +1,11 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-let x = 200, y = 200;
+const canvas_div = document.getElementById('canvas_div');
+
+canvas.height = canvas_div.clientHeight;
+canvas.width = canvas_div.clientWidth * 0.75;
+
+let x = canvas.width/2, y = canvas.height/2;
 
 const refresh_button = document.getElementById("refresh");
 let paused = false;
@@ -23,12 +28,6 @@ pause_button.addEventListener("click", () => {
     }
 
 });
-
-addEventListener("click", () => {
-    if (paused){
-    }
-}
-)
 
 function single_frame() {
     let delta_x = (Math.random() - 0.5) * 8;
