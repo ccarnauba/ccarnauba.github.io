@@ -1,0 +1,121 @@
+
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Caio Dezotti Carnauba</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href= "../styles/home_style.css"/>
+</head>
+<body>
+    <header>
+        <nav class="main_banner">
+            <h1 class="my_name"> Caio Dezotti Carnauba </h1>
+
+            <h2 class="nav_bar">
+                <div class="header-pair">
+                    <a href= "../index.html" title="Home">
+                        <span class="slash"> / </span>
+                        <span class="nav-name"> Home </span>
+                    </a>
+                </div>
+
+
+                <div class="header-pair">
+                    <a href="../blog.html" title="Blog">
+                        <span class="slash"> / </span>
+                        <span class="nav-name"> Blog </span>
+                    </a>
+                </div>
+
+                <div class="header-pair">
+                    <a href="../worklog.html" title="Worklog">
+                        <span class="slash"> / </span>
+                        <span class="nav-name"> Worklog </span>
+                    </a>
+                </div>
+
+                <div class="header-pair">
+                    <a href="../play.html" title="Play">
+                        <span class="slash"> / </span>
+                        <span class="nav-name"> Play</span>
+                    </a>
+                </div>
+            </h2>
+        </nav>
+    </header>
+<div class="text_body"><h2>What is an interpreter?</h2>
+
+<p>Programming languages can be split into many different axes, and you've probably
+heard of a couple of them. The difference that matters here is compiled vs
+interpreted. A compiled language is read by a compiler, which transforms your
+program into machine code to later be executed. An interpreter on the other
+hand, is a program which, very meta, runs a program in the language of choice. A
+common example of an interpreted language is python. If we write a program
+<code>
+def main():
+  print ("hello!")
+</code></p>
+
+<p>save it into a file hello.py, and then run <code>python hello.py</code> in the command
+line, the program python will read the lines in our program, and directly run
+our program, producing the output "hello." One of the beauties of the lisp
+dialects is that they're easy to build interpreters for, in fact, even though
+the task may seem daunting, the introductory book Structure and Interpretation
+of Computer Programs[^1], builds up to a very simple interpreter. I have some time
+on my hands, and I wanted to learn more about interpreters, so I gave a shot at
+building one.</p>
+
+<h2>What's the outline to building an interpreter?</h2>
+
+<p>There's roughly 3 stages to writing an interpreter: 
+1. Tokenization
+2. Building and abstract syntax tree (AST)
+3. Evaluating the abstract syntax tree. </p>
+
+<p>It feels unfair to split these three as such, since the third step is by far the
+largest. Now that we know the names of each step, let's actually do the darn thing. </p>
+
+<h3>Tokenization</h3>
+
+<p>In this step we want to break down the program into the smallest syntactical
+elements -- that is, to the smallest elements with any meaning. We refer to these units as tokens[^2]. Similar to the
+English language, our program's smallest elements are the words, and since we're
+talking about lisp, also parentheses.
+For example, if we have:</p>
+
+<p><code>lisp
+(define x a)
+</code></p>
+
+<p>we want our tokenized program to be:
+<code>python
+['define', 'x', a]
+</code>
+We mostly do this step to make the AST easier to build, and this step is otherwise mostly mechanical.</p>
+
+<h3>AST</h3>
+
+<p>Now let's learn about Abstract Syntax Trees! First, let's start by looking at an example. Let's say we have the simple program:
+<code>lisp
+(define a
+  ((let b 10)
+(+ b 10)))
+</code></p>
+
+<p>(This is a contrived program, it doesn't do anything useful lol).
+We'll then have the syntax tree:</p>
+
+<p><code>
+[['define', 'a', [['let', 'b', '10'], ['+', 'b', '10']]]]
+</code>
+Or graphically:</p>
+
+<p>![^1 ../static/on<em>writing</em>interpreters/ example.svg][^1 Abstract syntax tree]</p>
+</div class="text_body">
+</body></html>
