@@ -1,4 +1,4 @@
-*, *::before, *::after {
+* {
     box-sizing: border-box;
 }
 
@@ -61,12 +61,12 @@ a:focus-visible {
     opacity: 0.4;
 }
 
-.main_banner .nav_bar a {
+.nav_bar a {
     text-decoration: none;
     color: black;
 }
 
-.main_banner .nav_bar a:hover {
+.nav_bar a:hover {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -75,7 +75,11 @@ a:focus-visible {
     padding-top: 1.75rem;
 }
 
-.text_body > * + * {
+
+/* Add a top margin to any element that is directly after any sibling element,
+   and is a direct descendent of .text_body. */
+.text_body > * + *
+{
     margin-top: 1.1em;
 }
 
@@ -106,8 +110,7 @@ a:focus-visible {
     text-underline-offset: 2px;
 }
 
-.text_body img,
-.text_body svg {
+.text_body img{
     display: block;
     max-width: 100%;
     height: auto;
@@ -133,6 +136,7 @@ pre {
     overflow-x: auto;
 }
 
+/* Code blocks not in preformatted block have less padding, and are slighty bigger. */
 :not(pre) > code {
     font-size: 0.875em;
     background-color: #f4f2ed;
