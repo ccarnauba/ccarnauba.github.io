@@ -37,10 +37,10 @@ def convert_markdown_directory_to_blog_pages (markdown_directory, html_directory
 
             contents = markdown_file.readlines()
 
-            # TODO: Let's just use the metadata extra instead of adding our one
-            # two lines at the top.
             content_html = markdown2.markdown("".join(contents), extras=["fenced-code-blocks", "footnotes", "metadata"])
-            html_content = html_template.standard_blog_post(content_html)
+            style = content_html.metadata.get("style", "")
+
+            html_content = html_template.standard_blog_post(content_html, style)
 
             html_filename = filename.removesuffix(".md") + ".html"
 

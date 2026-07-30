@@ -1,4 +1,4 @@
-def standard_head(css_location):
+def standard_head(css_location, style):
     head_html = f"""
 <!doctype html>
 <html lang="en-US">
@@ -11,7 +11,8 @@ def standard_head(css_location):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href= "{css_location}"/>
+    <link rel="stylesheet" href= "{css_location}"/>
+    <style>{style}</style>
 </head>
 """
     return head_html
@@ -63,19 +64,19 @@ standard_footer ="""
 
 def standard_stylesheet(path_to_toplevel):  return path_to_toplevel + "styles/home_style.css"
 
-def standard_webpage (content_html, path_to_toplevel):
+def standard_webpage (content_html, path_to_toplevel, style):
     """
     Given an html string for the written content of our webpage, outputs
     html with the shared headers and footers.
     """
-    webpage = standard_head(standard_stylesheet(path_to_toplevel)) + "<body>" + standard_header(path_to_toplevel)\
-    + "<div class=\"text_body\">" + content_html\
-    + "</div class=\"text_body\">" + standard_footer\
-    + "</body>" + "</html>"
+    webpage = f"""{standard_head(standard_stylesheet(path_to_toplevel), style)} <body> {standard_header(path_to_toplevel)}
+    <div class=\"text_body\"> {content_html}
+    </div class=\"text_body\"> {standard_footer}
+    </body> </html>"""
     return webpage
 
 def standard_top_level_post (content_html):
-    return standard_webpage(content_html, "")
+    return standard_webpage(content_html, "", "")
 
-def standard_blog_post (content_html):
-    return standard_webpage(content_html, "../")
+def standard_blog_post (content_html, style):
+    return standard_webpage(content_html, "../", style)

@@ -1,4 +1,6 @@
 title: On writing a toy interpreter (Part 1)
+style: >
+ img { display: block; margin-left: auto; margin-right: auto; height: auto; width: 50%;}
 date: 2026-07-27
 
 
@@ -73,10 +75,6 @@ Or graphically:
 This is called an "abstract syntax" tree, since it is a tree that shows some sort of abstract relationship between the elements in the tree -- or in other words, an abstract syntax.
 
 The astute reader might also notice that we added an "assign" operation to the graphical representation of the tree. We do that to denote that `['b', 10]` is an assignment operation rather than an application of the function `b`
-
-:::{aside}
-test thing
-:::
 
 Now we're almost at a small interpreter!
 
